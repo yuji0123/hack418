@@ -36,6 +36,12 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="friendImageView" destination="mGx-sN-GJZ" id="xqw-FX-Pvw"/>
+                <outlet property="friendMeetInfoLabel" destination="FOF-RD-GTq" id="rn0-sO-KES"/>
+                <outlet property="friendNameLabel" destination="C8m-G9-7F5" id="nYY-06-oRY"/>
+                <outlet property="rankingNumLabel" destination="mP7-Qc-1KI" id="8av-FV-5hw"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -11,7 +11,9 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate  {
+class RankingViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate  {
+    
+    var friendRankingItems = [FriendRankingItem]()
     
     
     // 位置情報取得
@@ -23,6 +25,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //friendSearchItem.append(<#T##newElement: Element##Element#>)
+
         
         // フィールドの初期化
         lm = CLLocationManager()
@@ -41,6 +46,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableV
         
         // GPSの使用を開始する
         lm.startUpdatingLocation()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +72,32 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableV
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         // この例ではLogにErrorと表示するだけ．
         NSLog("Error")
+    }
+    
+    // for table view
+    
+    // セクション数
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // セクションの行数
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendRankingItems.count
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+        
+        let cell: FriendRankingTableViewCell = tableView.dequeueReusableCellWithIdentifier("RankingCell", forIndexPath: indexPath) as! FriendRankingTableViewCell
+        let profileImageURL : String = friendRankingItems[indexPath.row].image_url as String
+        let profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
+        
+        cell.rankingNumLabel.text = String(indexPath.row + 1)
+        cell.friendImageView.image = profileImage
+        cell.friendNameLabel.text = friendRankingItems[indexPath.row].name        
+        return cell
     }
 }
 

@@ -9,6 +9,11 @@
 import UIKit
 
 class FriendSearchTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var friendImageView: UIImageView!
+    @IBOutlet weak var friendNameLabel: UILabel!
+    @IBOutlet weak var friendPositionLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

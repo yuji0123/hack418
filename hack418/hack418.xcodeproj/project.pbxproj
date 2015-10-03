@@ -19,8 +19,8 @@
 		4E9EF9701BC00ADF0096DAD0 /* MyMeetLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF96F1BC00ADF0096DAD0 /* MyMeetLogItem.swift */; settings = {ASSET_TAGS = (); }; };
 		4E9EF9721BC038840096DAD0 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF9711BC038840096DAD0 /* TopViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4EA027A91BBFAE74002316DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027A81BBFAE74002316DC /* AppDelegate.swift */; };
-		4EA027AB1BBFAE74002316DC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AA1BBFAE74002316DC /* FirstViewController.swift */; };
-		4EA027AD1BBFAE74002316DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AC1BBFAE74002316DC /* SecondViewController.swift */; };
+		4EA027AB1BBFAE74002316DC /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AA1BBFAE74002316DC /* RankingViewController.swift */; };
+		4EA027AD1BBFAE74002316DC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AC1BBFAE74002316DC /* AccountViewController.swift */; };
 		4EA027B01BBFAE75002316DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA027AE1BBFAE75002316DC /* Main.storyboard */; };
 		4EA027B21BBFAE75002316DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EA027B11BBFAE75002316DC /* Assets.xcassets */; };
 		4EA027B51BBFAE75002316DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA027B31BBFAE75002316DC /* LaunchScreen.storyboard */; };
@@ -61,8 +61,8 @@
 		4E9EF9711BC038840096DAD0 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		4EA027A51BBFAE73002316DC /* hack418.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hack418.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA027A81BBFAE74002316DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EA027AA1BBFAE74002316DC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		4EA027AC1BBFAE74002316DC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4EA027AA1BBFAE74002316DC /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		4EA027AC1BBFAE74002316DC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4EA027AF1BBFAE75002316DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EA027B11BBFAE75002316DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EA027B41BBFAE75002316DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4E4A37481BBFC5ED00589B61 /* FriendSearchTableViewCell.swift */,
-				4E9EF95D1BC009930096DAD0 /* myMeetLogTableViewCell.swift */,
 				4E9EF9611BC009AD0096DAD0 /* FriendRankingTableViewCell.swift */,
+				4E9EF95D1BC009930096DAD0 /* myMeetLogTableViewCell.swift */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -185,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				4E9EF9711BC038840096DAD0 /* TopViewController.swift */,
-				4EA027AA1BBFAE74002316DC /* FirstViewController.swift */,
-				4EA027AC1BBFAE74002316DC /* SecondViewController.swift */,
+				4EA027AA1BBFAE74002316DC /* RankingViewController.swift */,
+				4EA027AC1BBFAE74002316DC /* AccountViewController.swift */,
 				4E4A37461BBFC56D00589B61 /* FriendSearchViewController.swift */,
 				4E9EF9661BC009CB0096DAD0 /* CustomCell */,
 			);
@@ -434,10 +434,10 @@
 				4E9EF9721BC038840096DAD0 /* TopViewController.swift in Sources */,
 				4E9EF96E1BC00AC00096DAD0 /* FriendSearchItem.swift in Sources */,
 				4E9EF96A1BC00A3B0096DAD0 /* FriendRankingItem.swift in Sources */,
-				4EA027AD1BBFAE74002316DC /* SecondViewController.swift in Sources */,
+				4EA027AD1BBFAE74002316DC /* AccountViewController.swift in Sources */,
 				4E9EF95F1BC009930096DAD0 /* myMeetLogTableViewCell.swift in Sources */,
 				4EA027A91BBFAE74002316DC /* AppDelegate.swift in Sources */,
-				4EA027AB1BBFAE74002316DC /* FirstViewController.swift in Sources */,
+				4EA027AB1BBFAE74002316DC /* RankingViewController.swift in Sources */,
 				4E9EF9701BC00ADF0096DAD0 /* MyMeetLogItem.swift in Sources */,
 				4E9EF9631BC009AD0096DAD0 /* FriendRankingTableViewCell.swift in Sources */,
 			);

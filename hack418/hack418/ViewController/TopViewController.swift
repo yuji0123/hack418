@@ -14,6 +14,10 @@ class TopViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // タブバーの色変更
+        let colorBg = UIColor(red: 73/255, green: 198/255, blue: 255/255, alpha: 1.0)
+        UITabBar.appearance().barTintColor = colorBg
     }
 
     override func didReceiveMemoryWarning() {

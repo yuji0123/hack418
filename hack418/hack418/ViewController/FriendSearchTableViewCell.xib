@@ -30,6 +30,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="friendImageView" destination="TFq-4y-Ea9" id="shI-d8-isS"/>
+                <outlet property="friendNameLabel" destination="ggL-Ua-3Q3" id="lJH-hj-x1o"/>
+                <outlet property="friendPositionLabel" destination="fUf-fW-6i9" id="dAb-ks-Lzw"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

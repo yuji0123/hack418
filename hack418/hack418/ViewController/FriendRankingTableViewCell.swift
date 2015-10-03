@@ -9,6 +9,12 @@
 import UIKit
 
 class FriendRankingTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var rankingNumLabel: UILabel!
+    @IBOutlet weak var friendImageView: UIImageView!
+    @IBOutlet weak var friendNameLabel: UILabel!
+    @IBOutlet weak var friendMeetInfoLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

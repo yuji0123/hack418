@@ -1,5 +1,5 @@
 //
-//  FriendSearchViewController.swift
+//  SecondViewController.swift
 //  hack418
 //
 //  Created by anthony on 2015/10/03.
@@ -10,14 +10,13 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class FriendSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    var friendSearchItem = [FriendSearchItem]()
+    var myMeetLogItems = [MyMeetLogItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view, typically from a nib.
         
         //friendSearchItem.append(<#T##newElement: Element##Element#>)
     }
@@ -28,7 +27,6 @@ class FriendSearchViewController: UIViewController, UITableViewDataSource, UITab
     }
     
 
-    // functions needed to be implemented
     // for table view
     
     // セクション数
@@ -38,21 +36,22 @@ class FriendSearchViewController: UIViewController, UITableViewDataSource, UITab
     
     // セクションの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendSearchItem.count
+        return myMeetLogItems.count
     }
     
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
-        let cell: FriendSearchTableViewCell = tableView.dequeueReusableCellWithIdentifier("SearchFriendCell", forIndexPath: indexPath) as! FriendSearchTableViewCell
-        let profileImageURL : String = friendSearchItem[indexPath.row].image_url as String
+        let cell: myMeetLogTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyMeetLogCell", forIndexPath: indexPath) as! myMeetLogTableViewCell
+        let profileImageURL : String = myMeetLogItems[indexPath.row].image_url as String
         let profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
         
         cell.friendImageView.image = profileImage
-        cell.friendNameLabel.text = friendSearchItem[indexPath.row].name
-        cell.friendPositionLabel.text = String(friendSearchItem[indexPath.row].position)
+        cell.friendNameLabel.text = myMeetLogItems[indexPath.row].name
+        cell.friendPositionLabel.text = String(myMeetLogItems[indexPath.row].position)
         
         return cell
     }
 }
+
