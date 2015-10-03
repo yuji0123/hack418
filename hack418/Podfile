@@ -2,7 +2,9 @@
 # platform :ios, '6.0'
 use_frameworks!
 target 'hack418' do
-
+	pod 'Alamofire','~> 2.0'
+	pod 'SwiftyJSON'
+	pod 'Spring'
 end
 
 target 'hack418Tests' do

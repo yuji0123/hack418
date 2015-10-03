@@ -1,0 +1,6 @@
+framework module Pods_hack418 {
+  umbrella header "Pods-hack418-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()

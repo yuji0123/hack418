@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate  {
     
     
     // 位置情報取得

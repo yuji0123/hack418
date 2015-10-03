@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class FriendSearchViewController: UIViewController {
+class FriendSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
