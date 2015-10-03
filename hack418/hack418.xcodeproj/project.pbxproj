@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4A37471BBFC56D00589B61 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A37461BBFC56D00589B61 /* FriendSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4E4A374A1BBFC5ED00589B61 /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A37481BBFC5ED00589B61 /* FriendSearchTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4E4A374B1BBFC5ED00589B61 /* FriendSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4A37491BBFC5ED00589B61 /* FriendSearchTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		4EA027A91BBFAE74002316DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027A81BBFAE74002316DC /* AppDelegate.swift */; };
 		4EA027AB1BBFAE74002316DC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AA1BBFAE74002316DC /* FirstViewController.swift */; };
 		4EA027AD1BBFAE74002316DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027AC1BBFAE74002316DC /* SecondViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E4A37461BBFC56D00589B61 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
+		4E4A37481BBFC5ED00589B61 /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
+		4E4A37491BBFC5ED00589B61 /* FriendSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendSearchTableViewCell.xib; sourceTree = "<group>"; };
 		4EA027A51BBFAE73002316DC /* hack418.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hack418.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA027A81BBFAE74002316DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA027AA1BBFAE74002316DC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +143,9 @@
 			children = (
 				4EA027AA1BBFAE74002316DC /* FirstViewController.swift */,
 				4EA027AC1BBFAE74002316DC /* SecondViewController.swift */,
+				4E4A37461BBFC56D00589B61 /* FriendSearchViewController.swift */,
+				4E4A37481BBFC5ED00589B61 /* FriendSearchTableViewCell.swift */,
+				4E4A37491BBFC5ED00589B61 /* FriendSearchTableViewCell.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 				4EA027B51BBFAE75002316DC /* LaunchScreen.storyboard in Resources */,
 				4EA027B21BBFAE75002316DC /* Assets.xcassets in Resources */,
 				4EA027B01BBFAE75002316DC /* Main.storyboard in Resources */,
+				4E4A374B1BBFC5ED00589B61 /* FriendSearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4A374A1BBFC5ED00589B61 /* FriendSearchTableViewCell.swift in Sources */,
+				4E4A37471BBFC56D00589B61 /* FriendSearchViewController.swift in Sources */,
 				4EA027AD1BBFAE74002316DC /* SecondViewController.swift in Sources */,
 				4EA027A91BBFAE74002316DC /* AppDelegate.swift in Sources */,
 				4EA027AB1BBFAE74002316DC /* FirstViewController.swift in Sources */,
