@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TopViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,18 @@ class TopViewController: UITabBarController {
         // タブバーの色変更
         let colorBg = UIColor(red: 73/255, green: 198/255, blue: 255/255, alpha: 1.0)
         UITabBar.appearance().barTintColor = colorBg
+        
+        // apiまわり
+        let params =
+        ["id": [1, 2]]
+        
+        //Getリクエスト
+        Alamofire.request(.GET, "https://hack418b.herokuapp.com/users", parameters: params, encoding: .JSON)
+            .response { (request, response, data, error) in
+                // レスポンスハンドリング
+                let json = SwiftyJSON.JSON(data!)
+                print(json)
+        }
     }
 
     override func didReceiveMemoryWarning() {
