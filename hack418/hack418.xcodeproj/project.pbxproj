@@ -27,6 +27,7 @@
 		4EA027C01BBFAE79002316DC /* hack418Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027BF1BBFAE79002316DC /* hack418Tests.swift */; };
 		4EA027CB1BBFAE7A002316DC /* hack418UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA027CA1BBFAE7A002316DC /* hack418UITests.swift */; };
 		4EB0CC231BBFB38B00F3B62D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB0CC221BBFB38B00F3B62D /* CoreLocation.framework */; };
+		4EFEC02F1BC0D7F100BC69AC /* shori.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EFEC02E1BC0D7F100BC69AC /* shori.jpg */; settings = {ASSET_TAGS = (); }; };
 		D8852CFA166F207CB3DEF304 /* Pods_hack418.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61B5DB5CF73AB6604FD081D /* Pods_hack418.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		4EA027CA1BBFAE7A002316DC /* hack418UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hack418UITests.swift; sourceTree = "<group>"; };
 		4EA027CC1BBFAE7A002316DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB0CC221BBFB38B00F3B62D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4EFEC02E1BC0D7F100BC69AC /* shori.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shori.jpg; sourceTree = "<group>"; };
 		AA9FECDEF872D641391CA4EE /* Pods-hack418.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack418.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack418/Pods-hack418.debug.xcconfig"; sourceTree = "<group>"; };
 		C61B5DB5CF73AB6604FD081D /* Pods_hack418.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hack418.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37BA5717C7228C8ABD981EE /* Pods-hack418.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack418.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack418/Pods-hack418.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				4EB0CC1E1BBFAFC100F3B62D /* Storyboard */,
 				4EB0CC1D1BBFAF6900F3B62D /* ViewController */,
 				4EA027A81BBFAE74002316DC /* AppDelegate.swift */,
+				4EFEC02D1BC0D6EC00BC69AC /* Assets */,
 				4EA027B11BBFAE75002316DC /* Assets.xcassets */,
 				4EA027B61BBFAE75002316DC /* Info.plist */,
 			);
@@ -226,6 +229,14 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		4EFEC02D1BC0D6EC00BC69AC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4EFEC02E1BC0D7F100BC69AC /* shori.jpg */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		6457196005F4230D3ACD97FF /* Frameworks */ = {
@@ -356,6 +367,7 @@
 				4EA027B51BBFAE75002316DC /* LaunchScreen.storyboard in Resources */,
 				4EA027B21BBFAE75002316DC /* Assets.xcassets in Resources */,
 				4EA027B01BBFAE75002316DC /* Main.storyboard in Resources */,
+				4EFEC02F1BC0D7F100BC69AC /* shori.jpg in Resources */,
 				4E4A374B1BBFC5ED00589B61 /* FriendSearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

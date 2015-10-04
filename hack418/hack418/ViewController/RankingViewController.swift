@@ -15,6 +15,7 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
     
     var friendRankingItems = [FriendRankingItem]()
     
+    @IBOutlet weak var tableView: UITableView!
     
     // 位置情報取得
     var lm: CLLocationManager!
@@ -25,6 +26,9 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //friendSearchItem.append(<#T##newElement: Element##Element#>)
 
@@ -48,6 +52,14 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
         lm.startUpdatingLocation()
         
         
+        // 架空データの作成
+        let f1 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10407835_1568751020039193_8681893949726244498_n.jpg?oh=237e401c4ea1c9df5f8408d2273e8913&oe=569A4877", position: "200m以内")
+        let f2 = MyMeetLogItem(name: "Yusuke Morishita", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1526578_200575616812340_486668951_n.jpg?oh=fda9c921be090bb291f972120dcb0f2e&oe=569C3292", position: "500m以内")
+        
+        //friendRankingItems.append(f1)
+        //friendRankingItems.append(f2)
+        
+        getJSON()
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +102,7 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
-        let cell: FriendRankingTableViewCell = tableView.dequeueReusableCellWithIdentifier("RankingCell", forIndexPath: indexPath) as! FriendRankingTableViewCell
+        let cell: FriendRankingTableViewCell = tableView.dequeueReusableCellWithIdentifier("RankCell", forIndexPath: indexPath) as! FriendRankingTableViewCell
         let profileImageURL : String = friendRankingItems[indexPath.row].image_url as String
         let profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
         
@@ -98,6 +110,33 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
         cell.friendImageView.image = profileImage
         cell.friendNameLabel.text = friendRankingItems[indexPath.row].name        
         return cell
+    }
+    
+    func getJSON () {
+        //Getリクエスト
+//        Alamofire.request(.GET, "https://hack418b.herokuapp.com/users.json", parameters: nil)
+//            .responseJSON { resource in
+//                //friendRankingItems.append(resource)
+//                print(resource)
+//        }
+        
+        var request: NSURLRequest?
+        var response: NSHTTPURLResponse?
+        var result: Result<AnyObject>!
+        
+        Alamofire.request(.GET, "https://hack418b.herokuapp.com/users.json", parameters: nil)
+            .responseJSON { responseRequest, responseResponse, responseResult in
+                request = responseRequest
+                response = responseResponse
+                result = responseResult
+                
+                print(result.value)
+                print(result.data)
+                
+                
+               // expectation.fulfill()
+        }
+        
     }
 }
 

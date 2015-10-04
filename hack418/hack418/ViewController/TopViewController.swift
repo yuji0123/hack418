@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 import Alamofire
 import SwiftyJSON
 
 class TopViewController: UITabBarController {
+    
+    // 位置情報取得
+    var lm: CLLocationManager!
+    var latitude: CLLocationDegrees! // 取得した緯度を保持するインスタンス
+    var longitude: CLLocationDegrees! // 取得した経度を保持するインスタンス
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +27,15 @@ class TopViewController: UITabBarController {
         let colorBg = UIColor(red: 73/255, green: 198/255, blue: 255/255, alpha: 1.0)
         UITabBar.appearance().barTintColor = colorBg
         
-        // apiまわり
-        let params =
-        ["id": [1, 2]]
         
+        //getJSON()
+    }
+    
+    func getJSON () {
         //Getリクエスト
-        Alamofire.request(.GET, "https://hack418b.herokuapp.com/users", parameters: params, encoding: .JSON)
-            .response { (request, response, data, error) in
-                // レスポンスハンドリング
-                let json = SwiftyJSON.JSON(data!)
-                print(json)
+        Alamofire.request(.GET, "https://hack418b.herokuapp.com/users/1.json", parameters: nil)
+            .responseJSON { resource in
+                print(resource)
         }
     }
 
@@ -40,14 +45,22 @@ class TopViewController: UITabBarController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /* 位置情報取得成功時に実行 */
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
+        // 緯度の取得
+        latitude = newLocation.coordinate.latitude
+        // 経度の取得
+        longitude = newLocation.coordinate.longitude
+        
+        NSLog("緯度: \(latitude) , 経度: \(longitude)")
+        
+        // GPSの使用を停止する．停止しない限りGPSは実行され，指定間隔で更新され続ける．
+        // lm.stopUpdatingLocation()
     }
-    */
-
+    
+    /* 位置情報取得失敗時に実行 */
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // この例ではLogにErrorと表示するだけ．
+        NSLog("Error")
+    }
 }
