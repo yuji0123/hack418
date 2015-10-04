@@ -74,7 +74,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ranking" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="menu48.png" selectedImage="menu48.png" id="acW-dT-cKf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="Msv-N4-j0K" id="Y5C-B7-LjP"/>
@@ -136,6 +136,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendImageView" destination="Oht-Vt-qo4" id="lHe-RP-HyD"/>
+                                            <outlet property="friendNameLabel" destination="cS0-9j-zcS" id="VmW-Qv-IZ6"/>
+                                            <outlet property="friendPositionLabel" destination="eCI-li-NXK" id="PP7-Rn-dsB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -153,7 +158,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user168.png" id="cPa-gy-q4n"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableview" destination="2YL-yW-GHe" id="ZRa-db-SrQ"/>
@@ -204,7 +209,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="friendImageView" destination="jam-2X-ofz" id="bOg-cL-WVD"/>
+                                            <outlet property="friendImageView" destination="jam-2X-ofz" id="cZg-RL-oDH"/>
                                             <outlet property="friendNameLabel" destination="gtc-e1-feH" id="Pwt-VL-uAu"/>
                                             <outlet property="friendPositionLabel" destination="Zb1-fK-tdg" id="8tO-bM-XU1"/>
                                         </connections>
@@ -228,10 +233,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pickel" id="T1t-yc-jLC"/>
+                    <tabBarItem key="tabBarItem" title="Pickel" image="smiling36.png" id="T1t-yc-jLC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tableView" destination="PBX-i4-4P5" id="YDI-QA-gat"/>
+                        <outlet property="tableview" destination="PBX-i4-4P5" id="Qcw-f0-nwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQX-k9-pLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,8 +266,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="menu48.png" width="25" height="25"/>
         <image name="shori.jpg" width="180" height="180"/>
+        <image name="smiling36.png" width="25" height="25"/>
+        <image name="user168.png" width="25" height="25"/>
     </resources>
 </document>

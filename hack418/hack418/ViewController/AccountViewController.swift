@@ -23,13 +23,24 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
         tableview.delegate = self
         tableview.dataSource = self
         
+        self.tableview.rowHeight = 80
+
+        
         
         // 架空データの作成
-        let f1 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10407835_1568751020039193_8681893949726244498_n.jpg?oh=237e401c4ea1c9df5f8408d2273e8913&oe=569A4877", position: "2015/10/4 10:20")
-        let f2 = MyMeetLogItem(name: "Yusuke Morishita", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1526578_200575616812340_486668951_n.jpg?oh=fda9c921be090bb291f972120dcb0f2e&oe=569C3292", position: "2015/10/2 18:00")
+        let f1 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", position: "2015/10/4 16:21")
+        let f2 = MyMeetLogItem(name: "Yusuke Morishita", image_url: "yusuke.jpg", position: "2015/10/4 16:21")
+        let f3 = MyMeetLogItem(name: "Yusuke Morishita", image_url: "yusuke.jpg", position: "2015/10/3 18:11")
+        let f4 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", position: "2015/10/3 10:32")
+        let f5 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", position: "2015/10/2 18:20")
+        let f6 = MyMeetLogItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", position: "2015/10/1 19:32")
         
         myMeetLogItems.append(f1)
         myMeetLogItems.append(f2)
+        myMeetLogItems.append(f3)
+        myMeetLogItems.append(f4)
+        myMeetLogItems.append(f5)
+        myMeetLogItems.append(f6)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,10 +66,8 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
         let cell: myMeetLogTableViewCell = tableview.dequeueReusableCellWithIdentifier("MyLogCell", forIndexPath: indexPath) as! myMeetLogTableViewCell
-        let profileImageURL : String = myMeetLogItems[indexPath.row].image_url as String
-        let profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
-
-        cell.friendImageView.image = profileImage
+        
+        cell.friendImageView.image = UIImage(named: myMeetLogItems[indexPath.row].image_url)
         cell.friendNameLabel.text = myMeetLogItems[indexPath.row].name
         cell.friendPositionLabel.text = myMeetLogItems[indexPath.row].position
         

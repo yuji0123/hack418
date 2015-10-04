@@ -24,12 +24,13 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.rowHeight = 80
         
         //self.tableView.registerClass(FriendRankingItem, forHeaderFooterViewReuseIdentifier: "RankCell")
         
         // 架空データの作成
-        let f1 = FriendRankingItem(name: "Yuji Kouketsu", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10407835_1568751020039193_8681893949726244498_n.jpg?oh=237e401c4ea1c9df5f8408d2273e8913&oe=569A4877", point: 12)
-        let f2 = FriendRankingItem(name: "Yusuke Morishita", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1526578_200575616812340_486668951_n.jpg?oh=fda9c921be090bb291f972120dcb0f2e&oe=569C3292", point: 4)
+        let f1 = FriendRankingItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", point: 12)
+        let f2 = FriendRankingItem(name: "Yusuke Morishita", image_url: "yusuke.jpg", point: 4)
         
         friendRankingItems.append(f1)
         friendRankingItems.append(f2)
@@ -58,12 +59,10 @@ class RankingViewController: UIViewController, CLLocationManagerDelegate, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
         let cell: FriendRankingTableViewCell = tableView.dequeueReusableCellWithIdentifier("RankCell", forIndexPath: indexPath) as! FriendRankingTableViewCell
-        let profileImageURL : String = friendRankingItems[indexPath.row].image_url as String
-        
         cell.rankingNumLabel.text = "\(indexPath.row+1)."
-        cell.rankingNumLabel.text = friendRankingItems[indexPath.row].name
-        cell.friendImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
-        cell.friendNameLabel.text = "\(friendRankingItems[indexPath.row].point)Pt"
+        cell.friendNameLabel.text = friendRankingItems[indexPath.row].name
+        cell.friendImageView.image = UIImage(named: friendRankingItems[indexPath.row].image_url)
+        cell.friendMeetInfoLabel.text = "\(friendRankingItems[indexPath.row].point)Pt"
         return cell
     }
     

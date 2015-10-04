@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class FriendSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var friendSearchItem = [FriendSearchItem]()
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableview: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +20,15 @@ class FriendSearchViewController: UIViewController, UITableViewDataSource, UITab
         
         //friendSearchItem.append(newElement: Element)
         
+        self.tableview.dataSource = self
+        self.tableview.delegate = self
+        
+        self.tableview.rowHeight = 80
+
+        
         // 架空データの作成
-        let f1 = FriendSearchItem(name: "Yuji Kouketsu", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10407835_1568751020039193_8681893949726244498_n.jpg?oh=237e401c4ea1c9df5f8408d2273e8913&oe=569A4877", position: "200m以内")
-        let f2 = FriendSearchItem(name: "Yusuke Morishita", image_url: "https://scontent-nrt1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10407835_1568751020039193_8681893949726244498_n.jpg?oh=237e401c4ea1c9df5f8408d2273e8913&oe=569A4877", position: "500m以内")
+        let f1 = FriendSearchItem(name: "Yuji Kouketsu", image_url: "koketsu.jpg", position: "100m以内")
+        let f2 = FriendSearchItem(name: "Yusuke Morishita", image_url: "yusuke.jpg", position: "150m以内")
         
         friendSearchItem.append(f1)
         friendSearchItem.append(f2)
@@ -53,25 +57,31 @@ class FriendSearchViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
-        let cell: FriendSearchTableViewCell = tableView.dequeueReusableCellWithIdentifier("SearchCell", forIndexPath: indexPath) as! FriendSearchTableViewCell
-        let profileImageURL : String = friendSearchItem[indexPath.row].image_url as String
-        let profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: profileImageURL)!)!)
+        let cell: FriendSearchTableViewCell = tableview.dequeueReusableCellWithIdentifier("SearchFriendCell", forIndexPath: indexPath) as! FriendSearchTableViewCell
         
-        cell.friendImageView.image = profileImage
+        cell.friendImageView.image = UIImage(named: friendSearchItem[indexPath.row].image_url)
         cell.friendNameLabel.text = friendSearchItem[indexPath.row].name
         cell.friendPositionLabel.text = String(friendSearchItem[indexPath.row].position)
         
         return cell
     }
     
-    func getJSON () {
-        //Getリクエスト
-        Alamofire.request(.POST, "https://hack418b.herokuapp.com/pickelpost.json", parameters: nil)
-            .responseJSON { resource in
-                print(resource)
-                //let json = SwiftyJSON.JSON(resource!)
-                //jsonItems.append(json)
-
-        }
+    func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+        let cell: FriendSearchTableViewCell = tableview.dequeueReusableCellWithIdentifier("SearchFriendCell", forIndexPath: indexPath) as! FriendSearchTableViewCell
+       
+        friendSearchItem.removeFirst()
+        self.tableview.reloadData()
+        
     }
+    
+//    func getJSON () {
+//        //Getリクエスト
+//        Alamofire.request(.POST, "https://hack418b.herokuapp.com/pickelpost.json", parameters: nil)
+//            .responseJSON { resource in
+//                print(resource)
+//                //let json = SwiftyJSON.JSON(resource!)
+//                //jsonItems.append(json)
+//
+//        }
+//    }
 }
